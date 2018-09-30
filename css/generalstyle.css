@@ -1,0 +1,390 @@
+/*-- TABLE OF CONTENTS--*/
+/*		1. VARIABLES & MIXINS
+		2. GENERAL
+		3. SECTIONS
+		 - NAVBAR
+		 - ABOUT ME
+		 - MY SKILLS
+		 - WORKS
+*/
+/*** 1. VARIABLES & MIXINS ***/
+/* COLORS */
+/* VENDOR PREFIX MIXINS */
+/***  2. GENERAL ***/
+body {
+  font: 1.2rem Lato, sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h1, h2 {
+  text-align: center;
+  font-family: Oswald, sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+
+header {
+  margin-bottom: 1rem;
+}
+
+b {
+  color: #f26d7d;
+}
+
+section {
+  margin: 0 2.5%;
+}
+
+.comment {
+  color: #f2d0d4;
+  font-style: italic;
+}
+
+.comment:before, .comment:after {
+  content: "--";
+}
+
+a {
+  color: #f26d7d;
+  border-bottom: 1px dashed;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+}
+
+/* 3. LAYOUT */
+.round-box {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -os-border-radius: 50%;
+  -ms-border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.round-box--xl, .round-box--m {
+  width: 14rem;
+  height: 14rem;
+}
+
+.round-box--xs {
+  width: 5rem;
+  height: 5rem;
+}
+
+.flex {
+  display: -ms-flexround-box;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+}
+
+.section-main {
+  margin-bottom: 2em;
+}
+
+.box-caption {
+  font-size: 0.9em;
+  text-align: center;
+  margin: 0.7em 0 1.5em 0;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 35em) {
+  h1 {
+    font-size: 7rem;
+  }
+
+  .round-box--xl {
+    width: 25em;
+    height: 25em;
+  }
+
+  section, aside {
+    margin: 0 5%;
+  }
+
+  .section-main {
+    line-height: 1.5;
+  }
+}
+@media (min-width: 50em) {
+  .section-container {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-items: center;
+    max-width: 1400px;
+  }
+}
+@media (min-width: 1400px) {
+  .section-container {
+    margin: 0 auto;
+  }
+}
+/*** 4. SECTIONS ***/
+/** NAVBAR **/
+.bar-item {
+  display: -ms-flexround-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-family: Oswald, Lato, sans-serif;
+  color: black;
+  transition-duration: 0.5s;
+}
+
+.bar-upper__ul > a {
+  border: none;
+}
+
+.bar-item1 {
+  background-color: #f2d0d4;
+}
+
+.bar-item2 {
+  background-color: #d0e2f1;
+}
+
+.bar-item3 {
+  background-color: #f6f2ce;
+}
+
+.bar-item1:hover {
+  background-color: #f26d7d;
+}
+
+.bar-item2:hover {
+  background-color: #48a2f1;
+}
+
+.bar-item3:hover {
+  background-color: #f6d968;
+}
+
+.bar-upper {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 35em) {
+  .bar-upper {
+    display: -ms-flexround-box;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: end;
+  }
+
+  .bar-item {
+    margin: 0 3em;
+  }
+}
+/** HERO **/
+.hero {
+  margin-bottom: 1.5em;
+}
+
+.round-box--hero {
+  background-image: url("hero-photo-whitebg.png");
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.hero-title {
+  position: relative;
+  bottom: 1em;
+  margin-bottom: -1em;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 80em) {
+  .hero {
+    display: -ms-flexround-box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .round-box--hero {
+    margin: 0;
+  }
+
+  .hero-title {
+    bottom: 0;
+  }
+}
+/* MY SKILLS */
+.list-rating__item {
+  text-align: right;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1.5rem;
+  align-items: center;
+}
+
+.list-rating__item + list-rating__item {
+  margin-top: 0.5rem;
+}
+
+.rating {
+  justify-self: start;
+}
+
+.list-rating__section + .list-rating__section {
+  margin-top: 1rem;
+}
+
+.rating__circle {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -os-border-radius: 50%;
+  -ms-border-radius: 50%;
+}
+
+/* RATING COLORS */
+.rating__circle--full {
+  background-color: #f26d7d;
+}
+
+.rating__circle--full2 {
+  background-color: #48a2f1;
+}
+
+.rating__circle--full3 {
+  background-color: #f6d968;
+}
+
+.rating__circle--empty {
+  background-color: #f2d0d4;
+}
+
+.rating__circle--empty2 {
+  background-color: #d0e2f1;
+}
+
+.rating__circle--empty3 {
+  background-color: #f6f2ce;
+}
+
+.rating__circle--half {
+  background-color: #f2d0d4;
+  position: relative;
+  overflow: hidden;
+}
+
+.rating__circle--half2 {
+  background-color: #d0e2f1;
+  position: relative;
+  overflow: hidden;
+}
+
+.rating__circle--half3 {
+  background-color: #f6f2ce;
+  position: relative;
+  overflow: hidden;
+}
+
+.rating__circle--half:after {
+  content: "";
+  position: absolute;
+  left: -50%;
+  width: 2rem;
+  height: 2rem;
+  background-color: #f26d7d;
+}
+
+.rating__circle--half2:after {
+  content: "";
+  position: absolute;
+  left: -50%;
+  width: 2rem;
+  height: 2rem;
+  background-color: #48a2f1;
+}
+
+.rating__circle--half3:after {
+  content: "";
+  position: absolute;
+  left: -50%;
+  width: 2rem;
+  height: 2rem;
+  background-color: #f6d968;
+}
+
+/* WORKS */
+.round-box--rentapig {
+  background-image: url("works-rentapig.png");
+}
+
+.round-box--zaba {
+  background-image: url("works-zaba.png");
+}
+
+.round-box--donutform {
+  background-image: url("works-donutsurvey.png");
+}
+
+.round-box--waterclub {
+  background-image: url("works-waterclub.png");
+}
+
+.work__round-box {
+  margin: 0 auto;
+  transition-duration: 0.5s;
+}
+
+.work__round-box:hover {
+  box-shadow: 0px 0px 20px rgba(100, 100, 100, 0.5);
+}
+
+.box-caption--work {
+  max-width: 30em;
+}
+
+.work {
+  margin: 0 auto;
+}
+
+@media (min-width: 35em) {
+  .work-container {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+    justify-items: center;
+    max-width: 1400px;
+  }
+}
+@media (min-width: 1400px) {
+  .work-container {
+    margin: 0 auto;
+  }
+}
+
+/*# sourceMappingURL=generalstyle.css.map */
